@@ -15,7 +15,7 @@ from ppq.quantization.quantizer import (ExtQuantizer, FPGAQuantizer,
                                         PPL_DSP_TI_Quantizer, PPLCUDAQuantizer,
                                         RKNN_PerTensorQuantizer,
                                         TengineQuantizer, TensorRTQuantizer,
-                                        TensorRTQuantizer_FP8)
+                                        TensorRTQuantizer_FP8, TVMQuantizer)
 
 __QUANTIZER_COLLECTION__ = {
     TargetPlatform.PPL_DSP_INT8: PPL_DSP_Quantizer,
@@ -35,6 +35,7 @@ __QUANTIZER_COLLECTION__ = {
     TargetPlatform.TENGINE_INT8:  TengineQuantizer,
     TargetPlatform.GRAPHCORE_FP8: GraphCoreQuantizer,
     TargetPlatform.TRT_FP8:       TensorRTQuantizer_FP8,
+    TargetPlatform.TVM_INT8:      TVMQuantizer,
 }
 
 
@@ -64,7 +65,8 @@ __EXPORTERS__ = {
     TargetPlatform.TRT_INT8:      TensorRTExporter_JSON,
     TargetPlatform.TRT_FP8:       ONNXRUNTIMExporter,
     TargetPlatform.NCNN_INT8:     NCNNExporter,
-    TargetPlatform.TENGINE_INT8:  TengineExporter
+    TargetPlatform.TENGINE_INT8:  TengineExporter,
+    TargetPlatform.TVM_INT8:      ONNXRUNTIMExporter,
 }
 
 
